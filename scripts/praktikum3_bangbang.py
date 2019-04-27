@@ -48,12 +48,15 @@ def move():
         ########################
         # YOUR CODE HERE START #
         ########################
-        if distances.centerMin < 0.4:
+        if distances.centerMin < 0.3:
           vel_msg.linear.x = 0
           vel_msg.angular.z = 0.1
-        elif distances.rightMin < 0.4:
+        elif distances.rightMin < 0.3:
           vel_msg.linear.x = 0
           vel_msg.angular.z = 0.1
+        elif distances.leftMin < 0.3:
+          vel_msg.linear.x = 0
+          vel_msg.angular.z = -0.1
         else:
           vel_msg.linear.x = 0.2
           vel_msg.angular.z = 0
